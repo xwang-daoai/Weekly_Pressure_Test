@@ -1,0 +1,20 @@
+{
+    "ObjectDet": {
+        "INKhqNKqa193xedm_quvgQ": 11
+    },
+    "Classification": {
+        "V5EkQnpWXx8jHLxKzlMteA": 11
+    },
+    "SupervisedSeg": {
+        "hWKbZ_QwFbezjLZYXSJ2BA": 11
+    },
+    "OCR": {
+        "9Pn8IQiIHsBBBVvC7Xb99Q": 11
+    },
+    "InstanceSeg": {
+        "JaN8zfdwIC8CCvpRdoBF6w": 11
+    },
+    "Keypoints": {
+        "vxga20f7g26o2is6FSCu9A": 11
+    }
+}

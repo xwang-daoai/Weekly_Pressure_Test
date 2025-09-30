@@ -1,0 +1,23 @@
+{
+    "SupervisedSeg": [
+        "hWKbZ_QwFbezjLZYXSJ2BA"
+    ],
+    "InstanceSeg": [
+        "JaN8zfdwIC8CCvpRdoBF6w"
+    ],
+    "ObjectDet": [
+        "INKhqNKqa193xedm_quvgQ"
+    ],
+    "Keypoints": [
+        "vxga20f7g26o2is6FSCu9A"
+    ],
+    "OCR": [
+        "9Pn8IQiIHsBBBVvC7Xb99Q"
+    ],
+    "Classification": [
+        "V5EkQnpWXx8jHLxKzlMteA"
+    ],
+    "Unknown": [
+        
+    ]
+}

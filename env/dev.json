@@ -1,0 +1,17 @@
+{
+    "base_url": "https://api.dev.daoai.ca",
+    "login_path": "/auth/login",
+    "api_prefix": "",
+    "headers": {
+      "accept": "application/json",
+      "content_type_json": "application/json",
+      "content_type_form": "application/x-www-form-urlencoded"
+    },
+    "concurrency_defaults": {
+      "target": 24,
+      "ramp_up_min": 5,
+      "steps": 24,
+      "hold_min": 300
+    }
+  }
+  

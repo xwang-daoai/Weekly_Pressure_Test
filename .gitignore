@@ -1,0 +1,26 @@
+# JMeter相关
+*.jtl
+*.log
+*.tmp
+*.bak
+
+# 环境变量文件（如果包含敏感信息）
+# env/*.json
+
+# 操作系统相关
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE相关
+.vscode/
+.idea/
+*.iml
+
+# 临时文件
+*.tmp
+*.temp
+
+# 日志文件
+*.log
