@@ -1,0 +1,75 @@
+name: Weekly JMeter Load Test
+
+on:
+  # 允许手动触发
+  workflow_dispatch: {}
+
+  # 注意：GitHub Actions 的 cron 使用 UTC 时间
+  # 下面两条 cron 用来覆盖温哥华「周五晚 21:00」的夏令时/冬令时：
+  # - PDT(UTC-7)：周六 04:00 UTC
+  # - PST(UTC-8)：周六 05:00 UTC
+  schedule:
+    - cron: "0 4 * * 6"   # 覆盖 PDT 时段
+    - cron: "0 5 * * 6"   # 覆盖 PST 时段
+
+jobs:
+  run-jmeter:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    env:
+      JMETER_WORKDIR: jmeter
+      JMETER_PLAN: autotest1.jmx
+      TZ_LOCAL: America/Vancouver
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 保险起见——再做一次“当地时间确系周五 21 点”的校验，
+      # 这样两条 cron 在一年中任何时段都能精准命中“温哥华周五 21:00”
+      - name: Guard for local Friday 21:00
+        run: |
+          export TZ="$TZ_LOCAL"
+          DOW=$(date +%u)       # 1..7 (Mon..Sun)
+          HOUR=$(date +%H)      # 00..23
+          if [ "$DOW" != "5" ] || [ "$HOUR" != "21" ]; then
+            echo "It's not Friday 21:00 in $TZ_LOCAL. Skipping."
+            exit 78  # neutral, 显示为“跳过”
+          fi
+
+      # 使用 docker 版 JMeter，免安装
+      # 如果你有 CSV 或插件等，相对路径会通过挂载目录一起可见
+      - name: Run JMeter (non-GUI)
+        run: |
+          mkdir -p "$JMETER_WORKDIR/out"
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE/$JMETER_WORKDIR":/tests \
+            -w /tests \
+            justb4/jmeter:5.6.3 \
+            -n \
+            -t "$JMETER_PLAN" \
+            -j out/jmeter.log \
+            -l out/results.jtl \
+            -e -o out/report \
+            ${JMETER_PROPERTIES:+-q $JMETER_PROPERTIES}
+
+      # 结果断言：若有失败样本则让 job 失败
+      # JTL 的 failure 栏位常见为 s="false"（取决于你 JTL 配置）
+      - name: Fail job if there are sample errors
+        run: |
+          if grep -q ' s="false"' "$JMETER_WORKDIR/out/results.jtl"; then
+            echo "JMeter detected failed samples."
+            exit 1
+          fi
+
+      # 上传测试产出：HTML 报告、JTL、日志
+      - name: Upload report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: jmeter-report
+          path: |
+            ${{ env.JMETER_WORKDIR }}/out/report
+            ${{ env.JMETER_WORKDIR }}/out/results.jtl
+            ${{ env.JMETER_WORKDIR }}/out/jmeter.log
