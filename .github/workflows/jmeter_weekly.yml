@@ -1,28 +1,41 @@
 name: Weekly JMeter Load Test
 
 on:
-  # 手动触发
-  workflow_dispatch:
-  # 定时触发（GitHub 用 UTC）
+  workflow_dispatch:   # 手动触发（用于测试前端显示）
+  push:                # 推一次也会跑，便于调试
+    branches: [ main ]
   schedule:
-    - cron: '0 4 * * 6'  # 覆盖 PDT (UTC-7) 的周五晚21:00 -> 周六 04:00 UTC
-    - cron: '0 5 * * 6'  # 覆盖 PST (UTC-8) 的周五晚21:00 -> 周六 05:00 UTC
+    - cron: '0 4 * * 6'  # PDT 的周五 21:00
+    - cron: '0 5 * * 6'  # PST 的周五 21:00
 
 jobs:
   run-jmeter:
     runs-on: ubuntu-latest
     env:
       JMETER_WORKDIR: jmeter
-      JMETER_PLAN: autotest1.jmx   # ← 改成你的 jmx 文件名
+      JMETER_PLAN: autotest1.jmx   # ← 改成你实际的 jmx 文件名
       TZ_LOCAL: America/Vancouver
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Guard for local Friday 21:00
+      # 仅在 schedule 触发时做“周五21:00”校验；手动/推送时不拦截
+      - name: Guard for local Friday 21:00 (schedule only)
+        if: ${{ github.event_name == 'schedule' }}
         run: |
           export TZ="$TZ_LOCAL"
-          [ "$(date +%u)" = "5" ] && [ "$(date +%H)" = "21" ] || { echo "Not Fri 21:00 local. Skip."; exit 78; }
+          DOW=$(date +%u)
+          HOUR=$(date +%H)
+          if [ "$DOW" != "5" ] || [ "$HOUR" != "21" ]; then
+            echo "Not Fri 21:00 local. Skip scheduled run."
+            exit 78
+          fi
+
+      # 可选：打印目录帮助你核对路径
+      - name: Show workspace tree
+        run: |
+          echo "Workspace:"; pwd
+          echo "List files:"; ls -R
 
       - name: Run JMeter (non-GUI)
         run: |
