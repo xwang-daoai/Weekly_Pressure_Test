@@ -2,8 +2,8 @@ name: Weekly JMeter Load Test
 
 on:
   workflow_dispatch:   # 手动触发（用于测试前端显示）
-  push:                # 推一次也会跑，便于调试
-    branches: [ main ]
+  # push:                # 推一次也会跑，便于调试
+  #   branches: [ main ]
   schedule:
     - cron: '0 4 * * 6'  # PDT 的周五 21:00
     - cron: '0 5 * * 6'  # PST 的周五 21:00
@@ -41,6 +41,7 @@ jobs:
         run: |
           mkdir -p "$JMETER_WORKDIR/out"
           docker run --rm \
+            -e JVM_ARGS="-Dhttps.protocols=TLSv1.2,TLSv1.3 -Djsse.enableSNIExtension=true" \
             -v "$GITHUB_WORKSPACE/$JMETER_WORKDIR":/tests \
             -w /tests \
             justb4/jmeter:latest \

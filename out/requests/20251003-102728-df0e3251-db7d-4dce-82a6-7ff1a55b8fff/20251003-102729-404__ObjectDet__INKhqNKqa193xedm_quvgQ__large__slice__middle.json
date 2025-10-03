@@ -1,0 +1,97 @@
+{
+    "project_uid": "INKhqNKqa193xedm_quvgQ",
+    "training_job_create": {
+        "name": "JM-IS large-slice-middle 251003-102729",
+        "preprocessing_steps": {
+            "HIRES_SLICE": {
+                "ENABLE": true,
+                "SLICE_ROW": 4,
+                "SLICE_COL": 4,
+                "OVERLAP_RATIO": 0.25,
+                "RESIZE_AFTER_SLICE": 512
+            },
+            "RESIZE": {
+                "ENABLE": false,
+                "MAX_EDGE": 512
+            },
+            "ROI": {
+                "ENABLE": true,
+                "X1": 0,
+                "Y1": 0,
+                "X2": 3072,
+                "Y2": 2048,
+                "X1_PERCENTAGE": 25,
+                "Y1_PERCENTAGE": 25,
+                "X2_PERCENTAGE": 75,
+                "Y2_PERCENTAGE": 75
+            },
+            "HISTOGRAM_EQUALIZATION": {
+                "ENABLE": true
+            }
+        },
+        "augmentation_steps": {
+            "RANDOMFLIP": {
+                "VERTICAL": {
+                    "ENABLE": true,
+                    "PROB": 0.5
+                },
+                "HORIZONTAL": {
+                    "ENABLE": true,
+                    "PROB": 0.5
+                }
+            },
+            "RANDOMTRANSLATE": {
+                "ENABLE": true,
+                "MAX": 0.5
+            },
+            "RANDOMROTATE": {
+                "ENABLE": true,
+                "MAX": 50
+            },
+            "RANDOMMOSAIC": {
+                "ENABLE": true,
+                "PROB": 0.5
+            },
+            "RANDOMSHEAR": {
+                "ENABLE": true,
+                "MAX": 23
+            },
+            "RANDOMBLUR": {
+                "ENABLE": true,
+                "BLURSIZE": 5,
+                "PROB": 0.5
+            },
+            "RANDOMHUE": {
+                "ENABLE": true,
+                "MAX": 0.5
+            },
+            "RANDOMSATURATION": {
+                "ENABLE": true,
+                "MAX": 0.5
+            },
+            "RANDOMVIBRANCE": {
+                "ENABLE": true,
+                "MAX": 0.5
+            },
+            "RANDOMCONTRAST": {
+                "ENABLE": true,
+                "CONTRASTLIMIT": 0.5,
+                "PROB": 0.5
+            },
+            "RANDOMNOISE": {
+                "ENABLE": true,
+                "NOISELIMIT": 5,
+                "PROB": 0.5
+            },
+            "EPOCHS": 2
+        },
+        "split_sizes": {
+            "train": 8,
+            "validation": 2,
+            "test": 1
+        },
+        "model_type": "large",
+        "criteria": null,
+        "checkpoint": null
+    }
+}

@@ -5,8 +5,8 @@
         "preprocessing_steps": {
             "HIRES_SLICE": {
                 "ENABLE": true,
-                "SLICE_ROW": 4,
-                "SLICE_COL": 7,
+                "SLICE_ROW": 10,
+                "SLICE_COL": 10,
                 "OVERLAP_RATIO": 0.5,
                 "RESIZE_AFTER_SLICE": 1024
             },
@@ -54,7 +54,7 @@
             },
             "RANDOMSHEAR": {
                 "ENABLE": true,
-                "MAX": 1
+                "MAX": 45
             },
             "RANDOMBLUR": {
                 "ENABLE": true,

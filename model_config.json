@@ -1,0 +1,111 @@
+{
+    "Classification": {
+      "section": "Classification",
+      "modes": [
+        "fast",
+        "balanced",
+        "accurate"
+      ],
+      "preprocess": [
+        "resize"
+      ],
+      "aug_levels": [
+        "small",
+        "middle",
+        "large"
+      ],
+      "supports_mosaic": false
+    },
+    "ObjectDet": {
+      "section": "ObjectDet",
+      "modes": [
+        "super_fast",
+        "fast",
+        "balanced",
+        "nano",
+        "small",
+        "large",
+        "accurate"
+      ],
+      "preprocess": [
+        "resize",
+        "slice"
+      ],
+      "aug_levels": [
+        "small",
+        "middle",
+        "large"
+      ],
+      "supports_mosaic": true
+    },
+    "InstanceSeg": {
+      "section": "InstanceSeg",
+      "modes": [
+        "super_fast",
+        "fast",
+        "accurate",
+        "rotated_accurate"
+      ],
+      "preprocess": [
+        "resize",
+        "slice"
+      ],
+      "aug_levels": [
+        "small",
+        "middle",
+        "large"
+      ],
+      "supports_mosaic": true
+    },
+    "SupervisedSeg": {
+      "section": "SupervisedSeg",
+      "modes": [
+        "fast",
+        "accurate",
+        "super_high_resolution"
+      ],
+      "preprocess": [
+        "resize",
+        "slice"
+      ],
+      "aug_levels": [
+        "small",
+        "middle",
+        "large"
+      ],
+      "supports_mosaic": true
+    },
+    "Keypoints": {
+      "section": "Keypoints",
+      "modes": [
+        "super_fast",
+        "fast",
+        "accurate",
+        "rotated_accurate"
+      ],
+      "preprocess": [
+        "resize"
+      ],
+      "aug_levels": [
+        "small",
+        "middle",
+        "large"
+      ],
+      "supports_mosaic": true
+    },
+    "OCR": {
+      "section": "OCR",
+      "modes": [
+        "accurate"
+      ],
+      "preprocess": [
+        "resize"
+      ],
+      "aug_levels": [
+        "small",
+        "middle",
+        "large"
+      ],
+      "supports_mosaic": true
+    }
+  }

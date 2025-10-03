@@ -20,10 +20,10 @@
                 "Y1": 0,
                 "X2": 3072,
                 "Y2": 2048,
-                "X1_PERCENTAGE": 0,
-                "Y1_PERCENTAGE": 0,
-                "X2_PERCENTAGE": 100,
-                "Y2_PERCENTAGE": 100
+                "X1_PERCENTAGE": 38,
+                "Y1_PERCENTAGE": 38,
+                "X2_PERCENTAGE": 62,
+                "Y2_PERCENTAGE": 62
             },
             "HISTOGRAM_EQUALIZATION": {
                 "ENABLE": true

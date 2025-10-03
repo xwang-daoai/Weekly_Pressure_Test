@@ -19,7 +19,7 @@
         <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="config_path" elementType="Argument">
             <stringProp name="Argument.name">config_path</stringProp>
@@ -44,7 +44,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Login and Model Cleanning">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Login and Model Cleanning" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -55,7 +55,7 @@
         </elementProp>
       </SetupThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login request and get token">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login request and get token" enabled="true">
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/auth/login</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -82,7 +82,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Accept</stringProp>
@@ -95,13 +95,13 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract token">
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract token" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">access_token</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -124,7 +124,7 @@ if (t) {
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Authorization</stringProp>
@@ -137,7 +137,7 @@ if (t) {
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /workspaces uid">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /workspaces uid" enabled="true">
           <stringProp name="HTTPSampler.path">/workspaces</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -148,7 +148,7 @@ if (t) {
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
@@ -161,7 +161,7 @@ if (t) {
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -252,7 +252,7 @@ if (targetUid) {
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /project uid">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /project uid" enabled="true">
           <stringProp name="HTTPSampler.path">/projects</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -284,7 +284,7 @@ if (targetUid) {
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -416,7 +416,7 @@ log.info(&quot;saved -&gt; ${dMap.resolve(&quot;projects_by_section.json&quot;)}
 </stringProp>
           </JSR223PostProcessor>
           <hashTree/>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>
@@ -454,9 +454,9 @@ log.info(&quot;saved -&gt; ${dMap.resolve(&quot;projects_by_section.json&quot;)}
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="List trained models (for cleanup)"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="List trained models (for cleanup)" enabled="true"/>
         <hashTree>
-          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE InstanceSeg">
+          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE InstanceSeg" enabled="true">
             <stringProp name="ForeachController.inputVal">project_uids_InstanceSeg</stringProp>
             <stringProp name="ForeachController.returnVal">project_uid</stringProp>
             <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -575,7 +575,7 @@ vars.put(&quot;tj_count&quot;, String.valueOf(n));
               </hashTree>
             </hashTree>
           </hashTree>
-          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE ObjectDet">
+          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE ObjectDet" enabled="true">
             <stringProp name="ForeachController.inputVal">project_uids_ObjectDet</stringProp>
             <stringProp name="ForeachController.returnVal">project_uid</stringProp>
             <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -594,7 +594,7 @@ vars.put(&quot;tj_count&quot;, String.valueOf(n));
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET trained-jobs">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET trained-jobs" enabled="true">
               <stringProp name="HTTPSampler.domain">api.dev.daoai.ca</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.path">/training-jobs</stringProp>
@@ -694,7 +694,7 @@ vars.put(&quot;tj_count&quot;, String.valueOf(n));
               </hashTree>
             </hashTree>
           </hashTree>
-          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE Keypoints">
+          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE Keypoints" enabled="true">
             <stringProp name="ForeachController.inputVal">project_uids_Keypoints</stringProp>
             <stringProp name="ForeachController.returnVal">project_uid</stringProp>
             <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -813,7 +813,7 @@ vars.put(&quot;tj_count&quot;, String.valueOf(n));
               </hashTree>
             </hashTree>
           </hashTree>
-          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE OCR">
+          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE OCR" enabled="true">
             <stringProp name="ForeachController.inputVal">project_uids_OCR</stringProp>
             <stringProp name="ForeachController.returnVal">project_uid</stringProp>
             <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -1171,7 +1171,7 @@ vars.put(&quot;tj_count&quot;, String.valueOf(n));
             </hashTree>
           </hashTree>
         </hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="batch" elementType="Argument">
               <stringProp name="Argument.name">batch</stringProp>
@@ -1181,13 +1181,13 @@ vars.put(&quot;tj_count&quot;, String.valueOf(n));
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
           <boolProp name="displayJMeterProperties">true</boolProp>
           <boolProp name="displayJMeterVariables">false</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1249,7 +1249,7 @@ vars.put(&quot;tj_count&quot;, String.valueOf(n));
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <stringProp name="HTTPSampler.domain">api.dev.daoai.ca</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
@@ -1371,7 +1371,7 @@ vars.put(&apos;mode_matchNr&apos;, String.valueOf(modes.size()))
 </stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE modes">
+          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE modes" enabled="true">
             <stringProp name="ForeachController.inputVal">mode</stringProp>
             <stringProp name="ForeachController.returnVal">current_mode</stringProp>
             <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -1404,11 +1404,11 @@ pp.eachWithIndex { v,i -&gt; vars.put(&quot;pp_${i+1}&quot;, v) }
                 <stringProp name="script">//[&apos;large&apos;,&apos;small&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 //vars.put(&apos;aug_matchNr&apos;, &apos;2&apos;)
 
-[&apos;large&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
+[&apos;middle&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)</stringProp>
               </JSR223Sampler>
               <hashTree/>
-              <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE aug">
+              <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE aug" enabled="true">
                 <stringProp name="ForeachController.inputVal">aug</stringProp>
                 <stringProp name="ForeachController.returnVal">current_aug</stringProp>
                 <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -1465,7 +1465,20 @@ int testN  = Integer.parseInt(props.get(&quot;split.count.test.${proj}&quot;)  ?
 
 // 载入参数模板：large/small
 final String cfgRoot = vars.get(&apos;config_path&apos;)
-def tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + (aug == &apos;large&apos; ? &apos;large.json&apos; : &apos;small.json&apos;))
+
+// 选择模板文件名
+String tplName
+switch (aug) {
+  case &apos;small&apos;:
+    tplName = &apos;small.json&apos;; break
+  case &apos;middle&apos;:
+    tplName = &apos;middle.json&apos;; break
+  case &apos;large&apos;:
+  default:
+    tplName = &apos;large.json&apos;
+}
+
+File tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + tplName)
 
 def slurper = new JsonSlurper()
 def payload = slurper.parse(tplFile) as Map
@@ -1534,7 +1547,7 @@ log.debug(json)
 </stringProp>
                   </JSR223PreProcessor>
                   <hashTree/>
-                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                     <collectionProp name="Asserion.test_strings">
                       <stringProp name="49587">201</stringProp>
                     </collectionProp>
@@ -1544,7 +1557,7 @@ log.debug(json)
                     <intProp name="Assertion.test_type">16</intProp>
                   </ResponseAssertion>
                   <hashTree/>
-                  <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+                  <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
                     <boolProp name="ResultCollector.error_logging">false</boolProp>
                     <objProp>
                       <name>saveConfig</name>
@@ -1582,7 +1595,7 @@ log.debug(json)
                   </ResultCollector>
                   <hashTree/>
                 </hashTree>
-                <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+                <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
                   <boolProp name="displayJMeterProperties">false</boolProp>
                   <boolProp name="displayJMeterVariables">true</boolProp>
                   <boolProp name="displaySystemProperties">false</boolProp>
@@ -1592,13 +1605,13 @@ log.debug(json)
             </hashTree>
           </hashTree>
         </hashTree>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
           <boolProp name="displayJMeterProperties">true</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1694,19 +1707,19 @@ log.info(&quot;Hydrated vars for ${section}: size=&quot; + list.size() +
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
-        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (InstanceSeg)">
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (InstanceSeg)" enabled="true">
           <stringProp name="ForeachController.inputVal">project_uids_InstanceSeg</stringProp>
           <stringProp name="ForeachController.returnVal">current_proj_uid</stringProp>
           <boolProp name="ForeachController.useSeparator">true</boolProp>
         </ForeachController>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Compute split for this project">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Compute split for this project" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -1782,7 +1795,7 @@ vars.put(&apos;mode_matchNr&apos;, String.valueOf(modes.size()))
             <boolProp name="ForeachController.useSeparator">true</boolProp>
           </ForeachController>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -1800,14 +1813,14 @@ vars.put(&apos;pp_matchNr&apos;, &apos;1&apos;)
               <boolProp name="ForeachController.useSeparator">true</boolProp>
             </ForeachController>
             <hashTree>
-              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
                 <stringProp name="scriptLanguage">groovy</stringProp>
                 <stringProp name="parameters"></stringProp>
                 <stringProp name="filename"></stringProp>
                 <stringProp name="cacheKey">true</stringProp>
                 <stringProp name="script">//[&apos;large&apos;,&apos;small&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 //vars.put(&apos;aug_matchNr&apos;, &apos;2&apos;)
-[&apos;large&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
+[&apos;middle&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)
 </stringProp>
               </JSR223Sampler>
@@ -1845,7 +1858,7 @@ vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)
                     </collectionProp>
                   </HeaderManager>
                   <hashTree/>
-                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
                     <stringProp name="scriptLanguage">groovy</stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="filename"></stringProp>
@@ -1869,7 +1882,20 @@ int testN  = Integer.parseInt(props.get(&quot;split.count.test.${proj}&quot;)  ?
 
 // 载入参数模板：large/small
 final String cfgRoot = vars.get(&apos;config_path&apos;)
-def tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + (aug == &apos;large&apos; ? &apos;large.json&apos; : &apos;small.json&apos;))
+
+// 选择模板文件名
+String tplName
+switch (aug) {
+  case &apos;small&apos;:
+    tplName = &apos;small.json&apos;; break
+  case &apos;middle&apos;:
+    tplName = &apos;middle.json&apos;; break
+  case &apos;large&apos;:
+  default:
+    tplName = &apos;large.json&apos;
+}
+
+File tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + tplName)
 
 def slurper = new JsonSlurper()
 def payload = slurper.parse(tplFile) as Map
@@ -2070,7 +2096,7 @@ log.debug(json)
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -2094,13 +2120,13 @@ log.info(&quot;Hydrated vars for ${section}: size=&quot; + list.size() +
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
-        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (SupervisedSeg)">
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (SupervisedSeg)" enabled="true">
           <stringProp name="ForeachController.inputVal">project_uids_SupervisedSeg</stringProp>
           <stringProp name="ForeachController.returnVal">current_proj_uid</stringProp>
           <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -2200,14 +2226,14 @@ vars.put(&apos;pp_matchNr&apos;, &apos;1&apos;)</stringProp>
               <boolProp name="ForeachController.useSeparator">true</boolProp>
             </ForeachController>
             <hashTree>
-              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
                 <stringProp name="scriptLanguage">groovy</stringProp>
                 <stringProp name="parameters"></stringProp>
                 <stringProp name="filename"></stringProp>
                 <stringProp name="cacheKey">true</stringProp>
                 <stringProp name="script">//[&apos;large&apos;,&apos;small&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 //vars.put(&apos;aug_matchNr&apos;, &apos;2&apos;)
-[&apos;large&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
+[&apos;middle&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)
 </stringProp>
               </JSR223Sampler>
@@ -2245,7 +2271,7 @@ vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)
                     </collectionProp>
                   </HeaderManager>
                   <hashTree/>
-                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
                     <stringProp name="scriptLanguage">groovy</stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="filename"></stringProp>
@@ -2266,10 +2292,21 @@ if (!proj) throw new IllegalStateException(&quot;current_proj_uid 为空，请�
 int trainN = Integer.parseInt(props.get(&quot;split.count.train.${proj}&quot;) ?: &quot;0&quot;)
 int valN   = Integer.parseInt(props.get(&quot;split.count.val.${proj}&quot;)   ?: &quot;0&quot;)
 int testN  = Integer.parseInt(props.get(&quot;split.count.test.${proj}&quot;)  ?: &quot;0&quot;)
-
-// 载入参数模板：large/small
 final String cfgRoot = vars.get(&apos;config_path&apos;)
-def tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + (aug == &apos;large&apos; ? &apos;large.json&apos; : &apos;small.json&apos;))
+
+// 选择模板文件名
+String tplName
+switch (aug) {
+  case &apos;small&apos;:
+    tplName = &apos;small.json&apos;; break
+  case &apos;middle&apos;:
+    tplName = &apos;middle.json&apos;; break
+  case &apos;large&apos;:
+  default:
+    tplName = &apos;large.json&apos;
+}
+
+File tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + tplName)
 
 def slurper = new JsonSlurper()
 def payload = slurper.parse(tplFile) as Map
@@ -2334,7 +2371,7 @@ log.debug(json)
 </stringProp>
                   </JSR223PreProcessor>
                   <hashTree/>
-                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                     <collectionProp name="Asserion.test_strings">
                       <stringProp name="49587">201</stringProp>
                     </collectionProp>
@@ -2582,7 +2619,7 @@ vars.put(&apos;mode_matchNr&apos;, String.valueOf(modes.size()))
             <boolProp name="ForeachController.useSeparator">true</boolProp>
           </ForeachController>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -2600,7 +2637,7 @@ vars.put(&apos;pp_matchNr&apos;, &apos;1&apos;)
               <boolProp name="ForeachController.useSeparator">true</boolProp>
             </ForeachController>
             <hashTree>
-              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
                 <stringProp name="scriptLanguage">groovy</stringProp>
                 <stringProp name="parameters"></stringProp>
                 <stringProp name="filename"></stringProp>
@@ -2608,7 +2645,7 @@ vars.put(&apos;pp_matchNr&apos;, &apos;1&apos;)
                 <stringProp name="script">//[&apos;large&apos;,&apos;small&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 //vars.put(&apos;aug_matchNr&apos;, &apos;2&apos;)
 
-[&apos;large&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
+[&apos;middle&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)</stringProp>
               </JSR223Sampler>
               <hashTree/>
@@ -2645,7 +2682,7 @@ vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)</stringProp>
                     </collectionProp>
                   </HeaderManager>
                   <hashTree/>
-                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
                     <stringProp name="scriptLanguage">groovy</stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="filename"></stringProp>
@@ -2666,411 +2703,21 @@ if (!proj) throw new IllegalStateException(&quot;current_proj_uid 为空，请�
 int trainN = Integer.parseInt(props.get(&quot;split.count.train.${proj}&quot;) ?: &quot;0&quot;)
 int valN   = Integer.parseInt(props.get(&quot;split.count.val.${proj}&quot;)   ?: &quot;0&quot;)
 int testN  = Integer.parseInt(props.get(&quot;split.count.test.${proj}&quot;)  ?: &quot;0&quot;)
-
-// 载入参数模板：large/small
 final String cfgRoot = vars.get(&apos;config_path&apos;)
-def tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + (aug == &apos;large&apos; ? &apos;large.json&apos; : &apos;small.json&apos;))
 
-def slurper = new JsonSlurper()
-def payload = slurper.parse(tplFile) as Map
-
-// --- 确保 training_job_create 存在 ---
-if (!(payload.training_job_create instanceof Map)) {
-    payload.training_job_create = [:]
-}
-def tj = payload.training_job_create as Map
-
-// --- 确保 preprocessing_steps 容器存在 ---
-if (!(tj.preprocessing_steps instanceof Map)) {
-    tj.preprocessing_steps = [:]
-}
-def pp = tj.preprocessing_steps as Map
-
-// 1) 根据 preprocess 切换开关（只改 ENABLE，不增删任何键）
-if (pp.RESIZE instanceof Map) {
-    pp.RESIZE.ENABLE = (preprocess == &apos;resize&apos;)
-}
-if (pp.HIRES_SLICE instanceof Map) {
-    pp.HIRES_SLICE.ENABLE = (preprocess == &apos;slice&apos;)
+// 选择模板文件名
+String tplName
+switch (aug) {
+  case &apos;small&apos;:
+    tplName = &apos;small.json&apos;; break
+  case &apos;middle&apos;:
+    tplName = &apos;middle.json&apos;; break
+  case &apos;large&apos;:
+  default:
+    tplName = &apos;large.json&apos;
 }
 
-
-// 2) 覆盖 split_sizes 数值（保持键名/层级完全不变）
-tj.split_sizes = (tj.split_sizes instanceof Map ? tj.split_sizes : [:]) as Map
-def ss = tj.split_sizes as Map
-ss.train       = trainN
-ss.validation  = valN
-ss.test        = testN
-
-
-// 3) 顶层 project_uid（按你的后端要求）
-payload.project_uid = proj
-
-// 写入 model_type（注意：写在 training_job_create 里）
-tj.model_type = mode
-
-// 方便排查：改一个可读的 name（也在 training_job_create 里）
-def stamp = new Date().format(&quot;yyMMdd-HHmmss&quot;)
-tj.name = &quot;JM-IS ${mode}-${preprocess}-${aug} ${stamp}&quot;
-
-// 顶层 project_uid（如果你的接口 body 需要）
-payload.project_uid = proj
-
-// 输出到变量，供 HTTP Sampler 的 Body Data 使用： ${payload}
-def json = JsonOutput.prettyPrint(JsonOutput.toJson(payload))
-vars.put(&apos;payload&apos;, json)
-
-// —— 调试日志 —— 
-log.info(&quot;[JM-PAYLOAD] proj=${proj}, mode=${mode}, preprocess=${preprocess}, aug=${aug}&quot;)
-log.info(&quot;[JM-PAYLOAD] name=${tj.name}&quot;)
-def totalStr = props.get(&quot;image_count.${proj}&quot;) ?: &quot;0&quot;
-int totalAll = (totalStr.isInteger() ? totalStr.toInteger() : 0)
-if (trainN + valN + testN != totalAll) {
-    log.warn(&quot;[PAYLOAD] split_sizes sum != total for ${proj}: ${trainN}+${valN}+${testN} vs ${totalAll}&quot;)
-}
-log.info(&quot;[PAYLOAD] proj=${proj}, mode=${mode}, preprocess=${preprocess}, aug=${aug}, split=${trainN}/${valN}/${testN}&quot;)
-log.debug(json)
-
-</stringProp>
-                  </JSR223PreProcessor>
-                  <hashTree/>
-                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
-                    <collectionProp name="Asserion.test_strings">
-                      <stringProp name="49587">201</stringProp>
-                    </collectionProp>
-                    <stringProp name="Assertion.custom_message"></stringProp>
-                    <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-                    <boolProp name="Assertion.assume_success">false</boolProp>
-                    <intProp name="Assertion.test_type">16</intProp>
-                  </ResponseAssertion>
-                  <hashTree/>
-                  <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-                    <boolProp name="ResultCollector.error_logging">false</boolProp>
-                    <objProp>
-                      <name>saveConfig</name>
-                      <value class="SampleSaveConfiguration">
-                        <time>true</time>
-                        <latency>true</latency>
-                        <timestamp>true</timestamp>
-                        <success>true</success>
-                        <label>true</label>
-                        <code>true</code>
-                        <message>true</message>
-                        <threadName>true</threadName>
-                        <dataType>true</dataType>
-                        <encoding>false</encoding>
-                        <assertions>true</assertions>
-                        <subresults>true</subresults>
-                        <responseData>false</responseData>
-                        <samplerData>false</samplerData>
-                        <xml>false</xml>
-                        <fieldNames>true</fieldNames>
-                        <responseHeaders>false</responseHeaders>
-                        <requestHeaders>false</requestHeaders>
-                        <responseDataOnError>false</responseDataOnError>
-                        <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                        <assertionsResultsToSave>0</assertionsResultsToSave>
-                        <bytes>true</bytes>
-                        <sentBytes>true</sentBytes>
-                        <url>true</url>
-                        <threadCounts>true</threadCounts>
-                        <idleTime>true</idleTime>
-                        <connectTime>true</connectTime>
-                      </value>
-                    </objProp>
-                    <stringProp name="filename"></stringProp>
-                  </ResultCollector>
-                  <hashTree/>
-                </hashTree>
-                <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-                  <boolProp name="displayJMeterProperties">false</boolProp>
-                  <boolProp name="displayJMeterVariables">true</boolProp>
-                  <boolProp name="displaySystemProperties">false</boolProp>
-                </DebugSampler>
-                <hashTree/>
-              </hashTree>
-            </hashTree>
-          </hashTree>
-        </hashTree>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">true</boolProp>
-          <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
-        </DebugSampler>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="KP – Create training jobs">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-        </elementProp>
-      </ThreadGroup>
-      <hashTree>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-          <collectionProp name="HeaderManager.headers">
-            <elementProp name="" elementType="Header">
-              <stringProp name="Header.name">Authorization</stringProp>
-              <stringProp name="Header.value">Bearer ${__property(token)}</stringProp>
-            </elementProp>
-            <elementProp name="" elementType="Header">
-              <stringProp name="Header.name">Content-Type</stringProp>
-              <stringProp name="Header.value">application/json</stringProp>
-            </elementProp>
-          </collectionProp>
-        </HeaderManager>
-        <hashTree/>
-        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
-          <stringProp name="HTTPSampler.domain">api.dev.daoai.ca</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
-        </ConfigTestElement>
-        <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
-          <stringProp name="scriptLanguage">groovy</stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="script">// section 要和你的 ForEach 一致
-def section = &apos;Keypoints&apos;  // 你也可以做成 UDV: ${section}
-
-// 取出全局属性里准备好的列表（CSV / JSON 二选一，看你前面产出了哪个）
-def csv = props.get(&quot;project_uids_${section}_csv&quot;)     // 例如 &quot;a,b,c&quot;
-def list = csv ? csv.split(&apos;,&apos;) as List : []
-
-// 把列表灌进“变量”空间（ForEach 就能看见了）
-vars.put(&quot;project_uids_${section}_matchNr&quot;, list.size().toString())
-for (int i = 0; i &lt; list.size(); i++) {
-    vars.put(&quot;project_uids_${section}_&quot; + (i + 1), list[i])
-}
-
-// 可选：便于排错
-log.info(&quot;Hydrated vars for ${section}: size=&quot; + list.size() +
-         &quot;, first=&quot; + (list ? list[0] : &apos;N/A&apos;))
-</stringProp>
-        </JSR223Sampler>
-        <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">true</boolProp>
-          <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
-        </DebugSampler>
-        <hashTree/>
-        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (Keypoints)">
-          <stringProp name="ForeachController.inputVal">project_uids_Keypoints</stringProp>
-          <stringProp name="ForeachController.returnVal">current_proj_uid</stringProp>
-          <boolProp name="ForeachController.useSeparator">true</boolProp>
-        </ForeachController>
-        <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Compute split for this project">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">// === inputs ===
-// 1) ForEach 的 Output variable name：current_proj_uid
-// 2) props 里已有 image_count.&lt;uid&gt;
-// 3) UDV: split.train.pct / split.val.pct / split.test.pct  (如 70 或 70%)
-def uid = vars.get(&apos;current_proj_uid&apos;)
-if (!uid) throw new IllegalStateException(&quot;current_proj_uid 未取到（检查 ForEach 的 Output variable name）&quot;)
-
-// 取总图数
-int total = 0
-def _t = props.get(&quot;image_count.${uid}&quot;)
-if (_t) { try { total = Integer.parseInt(_t) } catch(ignore) {} }
-
-// 读 UDV 百分比（严格版：未配置就报错）
-def readPct = { k -&gt;
-  def v = (vars.get(k) ?: props.get(k) ?: &apos;&apos;).toString().trim()
-  if (!v) throw new IllegalStateException(&quot;缺少 UDV: ${k}&quot;)
-  v = v.endsWith(&apos;%&apos;) ? v[0..-2] : v
-  Double.parseDouble(v)
-}
-double pT = readPct(&apos;split.train.pct&apos;)
-double pV = readPct(&apos;split.val.pct&apos;)
-double pE = readPct(&apos;split.test.pct&apos;)
-
-// 归一化
-double sum = pT + pV + pE
-if (sum &lt;= 0) throw new IllegalStateException(&quot;split 百分比总和&lt;=0&quot;)
-pT/=sum; pV/=sum; pE/=sum
-
-int trainN, valN, testN
-if (total &lt; 3) {
-  // 极小样本兜底：先填 train，再 val，再 test
-  int[] t = [0,0,0]
-  for (int i=0;i&lt;total;i++) t[i]++
-  (trainN,valN,testN) = [t[0],t[1],t[2]]
-} else {
-  def exact = [total*pT, total*pV, total*pE]
-  def base  = exact.collect { (int)Math.floor(it) }
-  int rem = total - base.sum()
-  def order = [0,1,2].sort{ -(exact[it]-base[it]) }  // 最大余数法
-  for (int i=0;i&lt;rem;i++) base[ order[i%3] ]++
-  (trainN,valN,testN) = base
-}
-
-// 跨后续所有嵌套循环可用
-props.put(&quot;split.count.train.${uid}&quot;, String.valueOf(trainN))
-props.put(&quot;split.count.val.${uid}&quot;,   String.valueOf(valN))
-props.put(&quot;split.count.test.${uid}&quot;,  String.valueOf(testN))
-props.put(&quot;split.count.csv.${uid}&quot;,   &quot;${trainN},${valN},${testN}&quot;)
-
-log.info(&quot;[SPLIT:PRECOMP] ${uid} total=${total} -&gt; train=${trainN}, val=${valN}, test=${testN}&quot;)
-</stringProp>
-          </JSR223Sampler>
-          <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">//def modes = [&apos;super_fast&apos;,&apos;fast&apos;,&apos;accurate&apos;,&apos;rotated_accurate&apos;]
-def modes = [&apos;super_fast&apos;]
-modes.eachWithIndex{ m,i -&gt; vars.put(&apos;mode_&apos; + (i+1), m) }
-vars.put(&apos;mode_matchNr&apos;, String.valueOf(modes.size()))
-</stringProp>
-          </JSR223Sampler>
-          <hashTree/>
-          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE modes" enabled="true">
-            <stringProp name="ForeachController.inputVal">mode</stringProp>
-            <stringProp name="ForeachController.returnVal">current_mode</stringProp>
-            <boolProp name="ForeachController.useSeparator">true</boolProp>
-          </ForeachController>
-          <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
-              <stringProp name="scriptLanguage">groovy</stringProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="script">def pp = [&apos;resize&apos;]  // 关键点仅用 resize
-vars.put(&apos;pp_matchNr&apos;, String.valueOf(pp.size()))
-pp.eachWithIndex { v,i -&gt; vars.put(&quot;pp_${i+1}&quot;, v) }
-
-
-</stringProp>
-            </JSR223Sampler>
-            <hashTree/>
-            <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE preprocess" enabled="true">
-              <stringProp name="ForeachController.inputVal">pp</stringProp>
-              <stringProp name="ForeachController.returnVal">current_preprocess</stringProp>
-              <boolProp name="ForeachController.useSeparator">true</boolProp>
-            </ForeachController>
-            <hashTree>
-              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
-                <stringProp name="scriptLanguage">groovy</stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="script">//[&apos;large&apos;,&apos;small&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
-//vars.put(&apos;aug_matchNr&apos;, &apos;2&apos;)
-[&apos;large&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
-vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)
-</stringProp>
-              </JSR223Sampler>
-              <hashTree/>
-              <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE aug" enabled="true">
-                <stringProp name="ForeachController.inputVal">aug</stringProp>
-                <stringProp name="ForeachController.returnVal">current_aug</stringProp>
-                <boolProp name="ForeachController.useSeparator">true</boolProp>
-              </ForeachController>
-              <hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /training-jobs" enabled="true">
-                  <stringProp name="HTTPSampler.path">/training-jobs</stringProp>
-                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                  <stringProp name="HTTPSampler.method">POST</stringProp>
-                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                    <collectionProp name="Arguments.arguments">
-                      <elementProp name="" elementType="HTTPArgument">
-                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${payload}&#xd;
-</stringProp>
-                        <stringProp name="Argument.metadata">=</stringProp>
-                      </elementProp>
-                    </collectionProp>
-                  </elementProp>
-                </HTTPSamplerProxy>
-                <hashTree>
-                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                    <collectionProp name="HeaderManager.headers">
-                      <elementProp name="" elementType="Header">
-                        <stringProp name="Header.name">Content-Type</stringProp>
-                        <stringProp name="Header.value">application/json</stringProp>
-                      </elementProp>
-                    </collectionProp>
-                  </HeaderManager>
-                  <hashTree/>
-                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
-                    <stringProp name="scriptLanguage">groovy</stringProp>
-                    <stringProp name="parameters"></stringProp>
-                    <stringProp name="filename"></stringProp>
-                    <stringProp name="cacheKey">true</stringProp>
-                    <stringProp name="script">// Language: groovy
-import groovy.json.*
-
-// 取循环变量
-final String proj       = vars.get(&apos;current_proj_uid&apos;)
-final String mode       = (vars.get(&apos;current_mode&apos;) ?: &apos;super_fast&apos;)
-final String preprocess = (vars.get(&apos;current_preprocess&apos;) ?: &apos;resize&apos;)   // &apos;resize&apos; or &apos;slice&apos;
-final String aug        = (vars.get(&apos;current_aug&apos;) ?: &apos;large&apos;)           // &apos;large&apos; or &apos;small&apos;
-
-
-if (!proj) throw new IllegalStateException(&quot;current_proj_uid 为空，请检查 FE projects 的 Output variable name&quot;)
-
-// ===== 读取分割数量（已在 FE projects 层计算写入 props）=====
-int trainN = Integer.parseInt(props.get(&quot;split.count.train.${proj}&quot;) ?: &quot;0&quot;)
-int valN   = Integer.parseInt(props.get(&quot;split.count.val.${proj}&quot;)   ?: &quot;0&quot;)
-int testN  = Integer.parseInt(props.get(&quot;split.count.test.${proj}&quot;)  ?: &quot;0&quot;)
-
-// 载入参数模板：large/small
-final String cfgRoot = vars.get(&apos;config_path&apos;)
-def tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + (aug == &apos;large&apos; ? &apos;large.json&apos; : &apos;small.json&apos;))
+File tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + tplName)
 
 def slurper = new JsonSlurper()
 def payload = slurper.parse(tplFile) as Map
@@ -3237,6 +2884,419 @@ log.debug(json)
         </ResultCollector>
         <hashTree/>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="KP – Create training jobs">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">Bearer ${__property(token)}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <stringProp name="HTTPSampler.domain">api.dev.daoai.ca</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">// section 要和你的 ForEach 一致
+def section = &apos;Keypoints&apos;  // 你也可以做成 UDV: ${section}
+
+// 取出全局属性里准备好的列表（CSV / JSON 二选一，看你前面产出了哪个）
+def csv = props.get(&quot;project_uids_${section}_csv&quot;)     // 例如 &quot;a,b,c&quot;
+def list = csv ? csv.split(&apos;,&apos;) as List : []
+
+// 把列表灌进“变量”空间（ForEach 就能看见了）
+vars.put(&quot;project_uids_${section}_matchNr&quot;, list.size().toString())
+for (int i = 0; i &lt; list.size(); i++) {
+    vars.put(&quot;project_uids_${section}_&quot; + (i + 1), list[i])
+}
+
+// 可选：便于排错
+log.info(&quot;Hydrated vars for ${section}: size=&quot; + list.size() +
+         &quot;, first=&quot; + (list ? list[0] : &apos;N/A&apos;))
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">true</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (Keypoints)" enabled="true">
+          <stringProp name="ForeachController.inputVal">project_uids_Keypoints</stringProp>
+          <stringProp name="ForeachController.returnVal">current_proj_uid</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+        </ForeachController>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Compute split for this project" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">// === inputs ===
+// 1) ForEach 的 Output variable name：current_proj_uid
+// 2) props 里已有 image_count.&lt;uid&gt;
+// 3) UDV: split.train.pct / split.val.pct / split.test.pct  (如 70 或 70%)
+def uid = vars.get(&apos;current_proj_uid&apos;)
+if (!uid) throw new IllegalStateException(&quot;current_proj_uid 未取到（检查 ForEach 的 Output variable name）&quot;)
+
+// 取总图数
+int total = 0
+def _t = props.get(&quot;image_count.${uid}&quot;)
+if (_t) { try { total = Integer.parseInt(_t) } catch(ignore) {} }
+
+// 读 UDV 百分比（严格版：未配置就报错）
+def readPct = { k -&gt;
+  def v = (vars.get(k) ?: props.get(k) ?: &apos;&apos;).toString().trim()
+  if (!v) throw new IllegalStateException(&quot;缺少 UDV: ${k}&quot;)
+  v = v.endsWith(&apos;%&apos;) ? v[0..-2] : v
+  Double.parseDouble(v)
+}
+double pT = readPct(&apos;split.train.pct&apos;)
+double pV = readPct(&apos;split.val.pct&apos;)
+double pE = readPct(&apos;split.test.pct&apos;)
+
+// 归一化
+double sum = pT + pV + pE
+if (sum &lt;= 0) throw new IllegalStateException(&quot;split 百分比总和&lt;=0&quot;)
+pT/=sum; pV/=sum; pE/=sum
+
+int trainN, valN, testN
+if (total &lt; 3) {
+  // 极小样本兜底：先填 train，再 val，再 test
+  int[] t = [0,0,0]
+  for (int i=0;i&lt;total;i++) t[i]++
+  (trainN,valN,testN) = [t[0],t[1],t[2]]
+} else {
+  def exact = [total*pT, total*pV, total*pE]
+  def base  = exact.collect { (int)Math.floor(it) }
+  int rem = total - base.sum()
+  def order = [0,1,2].sort{ -(exact[it]-base[it]) }  // 最大余数法
+  for (int i=0;i&lt;rem;i++) base[ order[i%3] ]++
+  (trainN,valN,testN) = base
+}
+
+// 跨后续所有嵌套循环可用
+props.put(&quot;split.count.train.${uid}&quot;, String.valueOf(trainN))
+props.put(&quot;split.count.val.${uid}&quot;,   String.valueOf(valN))
+props.put(&quot;split.count.test.${uid}&quot;,  String.valueOf(testN))
+props.put(&quot;split.count.csv.${uid}&quot;,   &quot;${trainN},${valN},${testN}&quot;)
+
+log.info(&quot;[SPLIT:PRECOMP] ${uid} total=${total} -&gt; train=${trainN}, val=${valN}, test=${testN}&quot;)
+</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">//def modes = [&apos;super_fast&apos;,&apos;fast&apos;,&apos;accurate&apos;,&apos;rotated_accurate&apos;]
+def modes = [&apos;super_fast&apos;]
+modes.eachWithIndex{ m,i -&gt; vars.put(&apos;mode_&apos; + (i+1), m) }
+vars.put(&apos;mode_matchNr&apos;, String.valueOf(modes.size()))
+</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE modes" enabled="true">
+            <stringProp name="ForeachController.inputVal">mode</stringProp>
+            <stringProp name="ForeachController.returnVal">current_mode</stringProp>
+            <boolProp name="ForeachController.useSeparator">true</boolProp>
+          </ForeachController>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">def pp = [&apos;resize&apos;]  // 关键点仅用 resize
+vars.put(&apos;pp_matchNr&apos;, String.valueOf(pp.size()))
+pp.eachWithIndex { v,i -&gt; vars.put(&quot;pp_${i+1}&quot;, v) }
+
+
+</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+            <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE preprocess" enabled="true">
+              <stringProp name="ForeachController.inputVal">pp</stringProp>
+              <stringProp name="ForeachController.returnVal">current_preprocess</stringProp>
+              <boolProp name="ForeachController.useSeparator">true</boolProp>
+            </ForeachController>
+            <hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">//[&apos;large&apos;,&apos;small&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
+//vars.put(&apos;aug_matchNr&apos;, &apos;2&apos;)
+[&apos;middle&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
+vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)
+</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
+              <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE aug" enabled="true">
+                <stringProp name="ForeachController.inputVal">aug</stringProp>
+                <stringProp name="ForeachController.returnVal">current_aug</stringProp>
+                <boolProp name="ForeachController.useSeparator">true</boolProp>
+              </ForeachController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /training-jobs" enabled="true">
+                  <stringProp name="HTTPSampler.path">/training-jobs</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">${payload}&#xd;
+</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">// Language: groovy
+import groovy.json.*
+
+// 取循环变量
+final String proj       = vars.get(&apos;current_proj_uid&apos;)
+final String mode       = (vars.get(&apos;current_mode&apos;) ?: &apos;super_fast&apos;)
+final String preprocess = (vars.get(&apos;current_preprocess&apos;) ?: &apos;resize&apos;)   // &apos;resize&apos; or &apos;slice&apos;
+final String aug        = (vars.get(&apos;current_aug&apos;) ?: &apos;large&apos;)           // &apos;large&apos; or &apos;small&apos;
+
+
+if (!proj) throw new IllegalStateException(&quot;current_proj_uid 为空，请检查 FE projects 的 Output variable name&quot;)
+
+// ===== 读取分割数量（已在 FE projects 层计算写入 props）=====
+int trainN = Integer.parseInt(props.get(&quot;split.count.train.${proj}&quot;) ?: &quot;0&quot;)
+int valN   = Integer.parseInt(props.get(&quot;split.count.val.${proj}&quot;)   ?: &quot;0&quot;)
+int testN  = Integer.parseInt(props.get(&quot;split.count.test.${proj}&quot;)  ?: &quot;0&quot;)
+
+final String cfgRoot = vars.get(&apos;config_path&apos;)
+
+// 选择模板文件名
+String tplName
+switch (aug) {
+  case &apos;small&apos;:
+    tplName = &apos;small.json&apos;; break
+  case &apos;middle&apos;:
+    tplName = &apos;middle.json&apos;; break
+  case &apos;large&apos;:
+  default:
+    tplName = &apos;large.json&apos;
+}
+
+File tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + tplName)
+
+def slurper = new JsonSlurper()
+def payload = slurper.parse(tplFile) as Map
+
+// --- 确保 training_job_create 存在 ---
+if (!(payload.training_job_create instanceof Map)) {
+    payload.training_job_create = [:]
+}
+def tj = payload.training_job_create as Map
+
+// --- 确保 preprocessing_steps 容器存在 ---
+if (!(tj.preprocessing_steps instanceof Map)) {
+    tj.preprocessing_steps = [:]
+}
+def pp = tj.preprocessing_steps as Map
+
+// 1) 根据 preprocess 切换开关（只改 ENABLE，不增删任何键）
+if (pp.RESIZE instanceof Map) {
+    pp.RESIZE.ENABLE = (preprocess == &apos;resize&apos;)
+}
+if (pp.HIRES_SLICE instanceof Map) {
+    pp.HIRES_SLICE.ENABLE = (preprocess == &apos;slice&apos;)
+}
+
+
+// 2) 覆盖 split_sizes 数值（保持键名/层级完全不变）
+tj.split_sizes = (tj.split_sizes instanceof Map ? tj.split_sizes : [:]) as Map
+def ss = tj.split_sizes as Map
+ss.train       = trainN
+ss.validation  = valN
+ss.test        = testN
+
+
+// 3) 顶层 project_uid（按你的后端要求）
+payload.project_uid = proj
+
+// 写入 model_type（注意：写在 training_job_create 里）
+tj.model_type = mode
+
+// 方便排查：改一个可读的 name（也在 training_job_create 里）
+def stamp = new Date().format(&quot;yyMMdd-HHmmss&quot;)
+tj.name = &quot;JM-IS ${mode}-${preprocess}-${aug} ${stamp}&quot;
+
+// 顶层 project_uid（如果你的接口 body 需要）
+payload.project_uid = proj
+
+// 输出到变量，供 HTTP Sampler 的 Body Data 使用： ${payload}
+def json = JsonOutput.prettyPrint(JsonOutput.toJson(payload))
+vars.put(&apos;payload&apos;, json)
+
+// —— 调试日志 —— 
+log.info(&quot;[JM-PAYLOAD] proj=${proj}, mode=${mode}, preprocess=${preprocess}, aug=${aug}&quot;)
+log.info(&quot;[JM-PAYLOAD] name=${tj.name}&quot;)
+def totalStr = props.get(&quot;image_count.${proj}&quot;) ?: &quot;0&quot;
+int totalAll = (totalStr.isInteger() ? totalStr.toInteger() : 0)
+if (trainN + valN + testN != totalAll) {
+    log.warn(&quot;[PAYLOAD] split_sizes sum != total for ${proj}: ${trainN}+${valN}+${testN} vs ${totalAll}&quot;)
+}
+log.info(&quot;[PAYLOAD] proj=${proj}, mode=${mode}, preprocess=${preprocess}, aug=${aug}, split=${trainN}/${valN}/${testN}&quot;)
+log.debug(json)
+
+</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                    <collectionProp name="Asserion.test_strings">
+                      <stringProp name="49587">201</stringProp>
+                    </collectionProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
+                    <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                    <boolProp name="Assertion.assume_success">false</boolProp>
+                    <intProp name="Assertion.test_type">16</intProp>
+                  </ResponseAssertion>
+                  <hashTree/>
+                  <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+                    <boolProp name="ResultCollector.error_logging">false</boolProp>
+                    <objProp>
+                      <name>saveConfig</name>
+                      <value class="SampleSaveConfiguration">
+                        <time>true</time>
+                        <latency>true</latency>
+                        <timestamp>true</timestamp>
+                        <success>true</success>
+                        <label>true</label>
+                        <code>true</code>
+                        <message>true</message>
+                        <threadName>true</threadName>
+                        <dataType>true</dataType>
+                        <encoding>false</encoding>
+                        <assertions>true</assertions>
+                        <subresults>true</subresults>
+                        <responseData>false</responseData>
+                        <samplerData>false</samplerData>
+                        <xml>false</xml>
+                        <fieldNames>true</fieldNames>
+                        <responseHeaders>false</responseHeaders>
+                        <requestHeaders>false</requestHeaders>
+                        <responseDataOnError>false</responseDataOnError>
+                        <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                        <assertionsResultsToSave>0</assertionsResultsToSave>
+                        <bytes>true</bytes>
+                        <sentBytes>true</sentBytes>
+                        <url>true</url>
+                        <threadCounts>true</threadCounts>
+                        <idleTime>true</idleTime>
+                        <connectTime>true</connectTime>
+                      </value>
+                    </objProp>
+                    <stringProp name="filename"></stringProp>
+                  </ResultCollector>
+                  <hashTree/>
+                </hashTree>
+                <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+                  <boolProp name="displayJMeterProperties">false</boolProp>
+                  <boolProp name="displayJMeterVariables">true</boolProp>
+                  <boolProp name="displaySystemProperties">false</boolProp>
+                </DebugSampler>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+          <boolProp name="displayJMeterProperties">true</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OCR – Create training jobs">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -3248,7 +3308,7 @@ log.debug(json)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Authorization</stringProp>
@@ -3295,19 +3355,19 @@ log.info(&quot;Hydrated vars for ${section}: size=&quot; + list.size() +
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
-        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (OCR)">
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="FE projects (OCR)" enabled="true">
           <stringProp name="ForeachController.inputVal">project_uids_OCR</stringProp>
           <stringProp name="ForeachController.returnVal">current_proj_uid</stringProp>
           <boolProp name="ForeachController.useSeparator">true</boolProp>
         </ForeachController>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Compute split for this project">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Compute split for this project" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -3382,7 +3442,7 @@ modes.eachWithIndex { v,i -&gt; vars.put(&quot;mode_${i+1}&quot;, v) }
             <boolProp name="ForeachController.useSeparator">true</boolProp>
           </ForeachController>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -3401,7 +3461,7 @@ pp.eachWithIndex { v,i -&gt; vars.put(&quot;pp_${i+1}&quot;, v) }
               <boolProp name="ForeachController.useSeparator">true</boolProp>
             </ForeachController>
             <hashTree>
-              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
                 <stringProp name="scriptLanguage">groovy</stringProp>
                 <stringProp name="parameters"></stringProp>
                 <stringProp name="filename"></stringProp>
@@ -3409,7 +3469,7 @@ pp.eachWithIndex { v,i -&gt; vars.put(&quot;pp_${i+1}&quot;, v) }
                 <stringProp name="script">//[&apos;large&apos;,&apos;small&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 //vars.put(&apos;aug_matchNr&apos;, &apos;2&apos;)
 
-[&apos;large&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
+[&apos;middle&apos;].eachWithIndex{ a,i -&gt; vars.put(&apos;aug_&apos; + (i+1), a) }
 vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)</stringProp>
               </JSR223Sampler>
               <hashTree/>
@@ -3446,7 +3506,7 @@ vars.put(&apos;aug_matchNr&apos;, &apos;1&apos;)</stringProp>
                     </collectionProp>
                   </HeaderManager>
                   <hashTree/>
-                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
                     <stringProp name="scriptLanguage">groovy</stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="filename"></stringProp>
@@ -3468,9 +3528,21 @@ int trainN = Integer.parseInt(props.get(&quot;split.count.train.${proj}&quot;) ?
 int valN   = Integer.parseInt(props.get(&quot;split.count.val.${proj}&quot;)   ?: &quot;0&quot;)
 int testN  = Integer.parseInt(props.get(&quot;split.count.test.${proj}&quot;)  ?: &quot;0&quot;)
 
-// 载入参数模板：large/small
 final String cfgRoot = vars.get(&apos;config_path&apos;)
-def tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + (aug == &apos;large&apos; ? &apos;large.json&apos; : &apos;small.json&apos;))
+
+// 选择模板文件名
+String tplName
+switch (aug) {
+  case &apos;small&apos;:
+    tplName = &apos;small.json&apos;; break
+  case &apos;middle&apos;:
+    tplName = &apos;middle.json&apos;; break
+  case &apos;large&apos;:
+  default:
+    tplName = &apos;large.json&apos;
+}
+
+File tplFile = new File(cfgRoot + File.separator + &apos;params&apos; + File.separator + tplName)
 
 def slurper = new JsonSlurper()
 def payload = slurper.parse(tplFile) as Map
@@ -3535,7 +3607,7 @@ log.debug(json)
 </stringProp>
                   </JSR223PreProcessor>
                   <hashTree/>
-                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                     <collectionProp name="Asserion.test_strings">
                       <stringProp name="49587">201</stringProp>
                     </collectionProp>
@@ -3637,6 +3709,43 @@ log.debug(json)
         </ResultCollector>
         <hashTree/>
       </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
